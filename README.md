@@ -50,3 +50,6 @@ python3 ModelGeneration.py
 python3 ModelPredict.py
 ```
 
+## Results
+![confusion_matrix](https://github.com/vitor-delela/ML-Road-Sign-Classifier/assets/64380868/99039c3b-e400-4788-b800-6561859509f4)
+
