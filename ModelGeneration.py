@@ -70,9 +70,9 @@ test_loss, test_acc = model.evaluate(test_images, categorical_test_labels)
 print(f'\n\nAcurácia no conjunto de teste: {test_acc}')
 print(f'Loss no conjunto de teste: {test_loss}')
 
-# model.save('relu_german_model_10epochs_rmsprop_comDropout_semDataAug.h5')
+# model.save('model_10epochs_rmsprop_dropout.h5')
 
-# Predições  do modelo gerado 
+# Generated model predictions 
 predicted_classes = model.predict(test_images)
 predicted_classes = np.argmax(np.round(predicted_classes),axis=1)
 correct = np.where(predicted_classes==test_labels)[0]
@@ -81,7 +81,7 @@ print ("Found %d correct labels" % len(correct))
 target_names = ["Class {}".format(i) for i in range(43)]
 print(classification_report(test_labels, predicted_classes, target_names=target_names))
 
-# Gráfico de Acurácia
+# Accuracy & Loss
 plt.figure(figsize=(12, 4))
 
 plt.subplot(1, 2, 1)
@@ -92,7 +92,6 @@ plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.legend(['Train', 'Validation'], loc='upper left')
 
-# Gráfico de Perda
 plt.subplot(1, 2, 2)
 plt.plot(model_train.history['loss'])
 plt.plot(model_train.history['val_loss'])
