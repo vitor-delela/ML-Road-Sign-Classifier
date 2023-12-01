@@ -70,7 +70,7 @@ test_loss, test_acc = model.evaluate(test_images, categorical_test_labels)
 print(f'\n\nAcurácia no conjunto de teste: {test_acc}')
 print(f'Loss no conjunto de teste: {test_loss}')
 
-# model.save('model_10epochs_rmsprop_dropout.h5')
+model.save('./models/model_10epochs_rmsprop_dropout.h5')
 
 # Generated model predictions 
 predicted_classes = model.predict(test_images)
