@@ -43,6 +43,8 @@ Dataset Available on:<br>
 
 ## Execution
 
+Must import dataset data into folder called "German_Dataset" in the main directory prior to execution.
+
 ```
 python3 ModelGeneration.py
 python3 ModelPredict.py
