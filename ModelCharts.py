@@ -6,8 +6,8 @@ from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-model = load_model('german_model_10epochs_rmsprop_comDropout_semDataAug.h5')
-class_mapping = pd.read_csv('/Users/vitordelela/Documents/PUCRS/7 SEM/AM/T2/German_Dataset/signname.csv') 
+model = load_model('model_10epochs_rmsprop_dropout.h5')
+class_mapping = pd.read_csv('./German_Dataset/signname.csv') 
 
 my_loader = GermanDataLoader() 
 (train_images, train_labels), \
@@ -28,8 +28,8 @@ plt.xticks(rotation=45, ha='right')
 plt.yticks(rotation=45) 
 heatmap = sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=class_mapping.loc[unique_labels, 'SignName'].values, yticklabels=class_mapping.loc[unique_labels, 'SignName'].values)
 
-plt.title("Matriz de Confusão")
-plt.xlabel("Previsto")
-plt.ylabel("Verdadeiro")
-plt.savefig('/Users/vitordelela/Documents/PUCRS/7 SEM/AM/T2/confusion_matrix.png')
+plt.title("Confusion Matrix")
+plt.xlabel("Predict")
+plt.ylabel("Correct")
+plt.savefig('./confusion_matrix.png')
 # plt.show()
